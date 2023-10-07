@@ -6,6 +6,7 @@ import com.programming.techie.productservice.dto.ProductResponse;
 import com.programming.techie.productservice.service.ProductService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -26,6 +27,8 @@ public class ProductController {
 
     }
 
+    @GetMapping(value = "/get")
+    @ResponseStatus(HttpStatus.OK)
     public List<ProductResponse> getAllProducts() {
         return productService.getAllProducts();
     }
